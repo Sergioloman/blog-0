@@ -1,0 +1,19 @@
+{
+  "name": "note-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Server/server.js",
+    "build": "cd Client && npm run build",
+    "develop": "concurrently \"cd Server && npm run watch\" \"cd Client && npm start\"",
+    "install": "cd Server && npm i && cd ../Client && npm i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
