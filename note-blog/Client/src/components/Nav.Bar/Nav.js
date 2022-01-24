@@ -11,9 +11,9 @@ const Navigation =()=>{
                         </div>
                     </Navbar.Brand>
                     <Nav className="flex-row-reverse">
-                        <Nav.Link href="#About" className= "h6" id="navbarToggleExternalContent">About</Nav.Link>
-                        <Nav.Link href="#Archive" className= "h6" id="navbarToggleExternalContent">Archive</Nav.Link>
-                        <Nav.Link href="#Stuff" className= "h6" id="navbarToggleExternalContent">Stuff</Nav.Link>
+                        <Nav.Link href="/Auth" className= "h6" id="navbarToggleExternalContent">Key...</Nav.Link>
+                        <Nav.Link href="/Archive" className= "h6" id="navbarToggleExternalContent">Log...</Nav.Link>
+                        <Nav.Link href="/" className= "h6" id="navbarToggleExternalContent">Ideas...</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
