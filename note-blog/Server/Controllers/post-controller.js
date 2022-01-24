@@ -21,7 +21,7 @@ const postController = {
         .then(({_id})=>{
             return User.findOneAndUpdate(
                 { username: req.body.username},
-                { $push: { thoughts: _id } },
+                { $push: { posts: _id } },
                 { new: true }
             )
            
@@ -44,9 +44,9 @@ const postController = {
           .catch((err) => res.status(500).json(err));
 
     },
-       deletePost(req,res){
+    deletePost(req,res){
         Post.findOneAndDelete(
-            { _id: req.params.thoughtId}
+            { _id: req.params.postId}
         )
         .then((response) => {
             res.json(response);
