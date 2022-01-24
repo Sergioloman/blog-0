@@ -1,13 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/notes', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/app', {
   //useFindAndModify: false,
   useNewUrlParser: true,
   //useCreateIndex: true,

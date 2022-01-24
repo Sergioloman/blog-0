@@ -1,25 +1,26 @@
 import React from "react";
-
+import "../App.css";
 import PostForm from "../components/Post.Form/Form";
-import PostList from "../components/Post.List/List";
+//import Login from "./Login";
+//import SignUp from "./SignUp";
 import Navigation from "../components/Nav.Bar/Nav";
-
 import { Col ,Row} from 'react-bootstrap'
 
-const user = "MechaWizardSword"
+
 
 const Home = () => {
     return (
-        <main>
+        <main >
             <Navigation/>
             <Col >
-                <Row className="justify-content-md-center">
+                <Row>
                     <PostForm />
                 </Row>
                 <Row>
-                    <PostList
-                        posts={user.posts}
-                        title={`${user.username} says...`}></PostList>
+                    
+                </Row>
+                <Row>
+                    
                 </Row>
             </Col>
         </main>
