@@ -8,10 +8,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/notes', {
-  useFindAndModify: false,
+  //useFindAndModify: false,
   useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true
+  //useCreateIndex: true,
+  useUnifiedTopology: true,
+  
 });
 
 mongoose.set('debug', true);
