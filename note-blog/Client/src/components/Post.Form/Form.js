@@ -1,5 +1,8 @@
-import React  from "react";
-import {Form, Button, Card} from 'react-bootstrap'
+import React from "react";
+import {Form, Button } from 'react-bootstrap'
+//import { useState } from 'react';
+
+///import {addPost} from Methods/somwehere//
 
 function PostForm({ addPost }) {
     const [value, setValue] = React.useState("");

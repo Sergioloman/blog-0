@@ -1,7 +1,7 @@
 const { User, Post} = require("../models");
 
 const postController = {
-    getThoughts(req, res){
+    getPosts(req, res){
         Post.find({})
         .then((response) => {
             res.json(response);
