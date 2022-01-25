@@ -1,12 +1,14 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 
 const Archive = ({posts, username }) => {
   if (!posts) {
     return (
-      <Card>
-        <Card.Title>Notes</Card.Title>
-        <Card.Body>Nothing here yet...</Card.Body>
+      <Card className="mb-1 p-5 bg-dark">
+        <Col className='md-6'>
+        <Card.Title className="text-light"><b>Notes :</b></Card.Title>
+        <Card.Body className="text-light">Nothing here yet...</Card.Body>
+        </Col>
       </Card>
     )
     
@@ -14,16 +16,19 @@ const Archive = ({posts, username }) => {
 
   return (
     <div>
-      <h3>By {username}</h3>
+      <h3>Everything has already been said ... </h3>
       {posts.map(post => (
-          <ul key={post._id} className="card mb-3">
-            <li className="card-header">
-             
-                {post.postText}
-              
-              posted on {post.createdAt}
-            </li>
-          </ul>
+          <Card key={post._id} className="mb-1 p-5 bg-dark">
+            <Col className='md-6'>
+            <Card.Body className="text-light r">
+              {post.postText}
+              <br/>
+              by <span className='fw-bold'>
+                {post.username} on {post.createdAt}
+                </span>
+            </Card.Body>
+            </Col>
+          </Card>
         ))}
     </div>
   );

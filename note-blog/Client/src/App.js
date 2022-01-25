@@ -19,7 +19,6 @@ function App() {
           <Route exact path="/" element={<Home/>}></Route>
           <Route exact path="/Archive" element={<Archive/>}></Route>
           <Route exact path="/Auth" element={<Auth/>}></Route>
-
         </Routes>
     </Router>
     </Container>

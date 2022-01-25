@@ -6,7 +6,7 @@ const SignUp = () => {
         <main className="mb-4">
         <div className="col-md-6">
           <div className="card">
-            <h4 className="card-header">Sign Up</h4>
+            <h4 className="card-header bg-dark text-light">Sign Up</h4>
             <div className="card-body">
               <form >
                 <input

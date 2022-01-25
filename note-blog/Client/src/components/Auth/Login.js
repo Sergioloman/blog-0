@@ -4,12 +4,12 @@ import { Card } from "react-bootstrap"
 
 const Login = () => {
     return(
-        <Card className="mb-4" bg="dark">
-          <div className="col-md-6">
-          <div className="card">
-            <h4 className="card-header">Login</h4>
-            <div className="card-body">
-              <form >
+        <Card className="mb-4 bg-dark" >
+          <div className="col-md-6 ">
+            <div className="card ">
+              <h4 className="card-header bg-dark text-light">Login</h4>
+                <div className="card-body">
+                  <form >
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -27,7 +27,7 @@ const Login = () => {
                   id="password"
                  
                 />
-                <button className="btn d-block w-100" type="submit">
+                <button className="btn d-block w-100 text-light" type="submit" >
                   Submit
                 </button>
               </form>
