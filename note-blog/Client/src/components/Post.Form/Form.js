@@ -1,28 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button, InputGroup } from 'react-bootstrap'
-//import { useState } from 'react';
-
 ///import {addPost} from Methods/somwehere//
 
-function PostForm({ addPost }) {
-  const [value, setValue] = React.useState("");
+const PostForm = () => {
+  const [ input, setInput] = useState({
+    username:'',
+    postText:''
+  })
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    if (!value) return;
-    addPost(value);
-    setValue("");
-  };
+  const handleChange = async event => {
+    const  {name, value} = event.target;
+
+    setInput(prevInput =>{
+      return {
+        ...prevInput,
+        [name]:value
+      }
+    })
+  }
+
+  const handleSubmit = async event => {
+    event.preventDefault()
+    console.log(input)
+    
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-1 p-5 bg-dark" >
         <Form.Label className="text-light "><b>This could be something</b></Form.Label>
         <InputGroup className="mt-1">
-          <Form.Control as="textarea" rows={3} value={value} onChange={e => setValue(e.target.value)} placeholder="A tought, or nothing at all ..." />
+          <Form.Control 
+          onChange={handleChange}
+          name="postText" 
+          value={input.postText} 
+          as="textarea" 
+          rows={3} 
+          placeholder="A tought, or nothing at all ..." />
         </InputGroup>
         <InputGroup className="mt-1">
-          <Form.Control type="username" value={value} onChange={e => setValue(e.target.value)} placeholder="left here by ..." />
+          <Form.Control 
+          onChange={handleChange} 
+          name="username"
+          value={input.username} 
+          type="username" 
+          placeholder="left here by ..." />
           <Button variant="danger" type="submit">Done</Button>
         </InputGroup>
       </Form.Group>

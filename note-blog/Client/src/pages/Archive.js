@@ -1,17 +1,16 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
-const Archive = ({posts, username }) => {
+const Archive = ({posts}) => {
   if (!posts) {
     return (
       <Card className="mb-1 p-5 bg-dark">
         <Col className='md-6'>
-        <Card.Title className="text-light"><b>Notes :</b></Card.Title>
+        <Card.Title className="text-light fw-bold">Notes :</Card.Title>
         <Card.Body className="text-light">Nothing here yet...</Card.Body>
         </Col>
       </Card>
     )
-    
   }
 
   return (
