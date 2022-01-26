@@ -1,0 +1,6 @@
+Alright so here is the idea :
+
+Make an application that can input text from your browser. save it in a server? mongo DB server/ and then use it as your persona
+blog :)
+
+be sure to run server locally using nodemon during testing ! ( nodemon server.js will do the trick)

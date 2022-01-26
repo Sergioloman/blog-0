@@ -1,57 +1,68 @@
-const { User, Post} = require("../models");
+const { User, Post } = require("../models");
 
 const postController = {
-    getPosts(req, res){
+    getPosts(req, res) {
         Post.find({})
-        .then((response) => {
-            res.json(response);
-          })
-          .catch((err) => res.status(500).json(err));
+            .then((response) => {
+                res.json(response);
+            })
+            .catch((err) => res.status(500).json(err));
     },
-    
-    getSinglePost(req,res){
-        Post.findOne({_id: req.params.postId})
-        .then((response) => {
-            res.json(response);
-          })
-          .catch((err) => res.status(500).json(err));
+
+    getSinglePost(req, res) {
+        Post.findOne({ _id: req.params.postId })
+            .then((response) => {
+                res.json(response);
+            })
+            .catch((err) => res.status(500).json(err));
     },
-    createNewPost(req,res){
+    createNewPost(req, res) {
         Post.create(req.body)
-        .then(({_id})=>{
-            return User.findOneAndUpdate(
-                { username: req.body.username},
-                { $push: { posts: _id } },
-                { new: true }
-            )
-           
-        })
-        .then((response) => {
-            res.json(response);
-          })
-          .catch((err) => res.status(500).json(err));
+            .then(({ _id }) => {
+
+                return User.findOneAndUpdate(
+                    { username: req.body.username },
+                    { $push: { posts: _id } },
+                    { new: true }
+                )
+
+                
+            })
+            // we are onto something here 
+            //.then( dbPostData => { req.body.save(
+
+            //     req.body.username = dbPostData.username,
+            //     req.body.postText = dbPostData.postText
+            // )
+            // })
+            .then((response) => {
+
+
+                res.json(response + " hope you get there buddy");
+            })
+            .catch((err) => res.status(500).json(err));
     },
- 
-    updatePost(req,res){
+
+    updatePost(req, res) {
         Post.findOneAndUpdate(
-            { _id: req.params.postId},
-            { $set: req.body},
-            { new: true, runValidators:true}
+            { _id: req.params.postId },
+            { $set: req.body },
+            { new: true, runValidators: true }
         )
-        .then((response) => {
-            res.json(response);
-          })
-          .catch((err) => res.status(500).json(err));
+            .then((response) => {
+                res.json(response);
+            })
+            .catch((err) => res.status(500).json(err));
 
     },
-    deletePost(req,res){
+    deletePost(req, res) {
         Post.findOneAndDelete(
-            { _id: req.params.postId}
+            { _id: req.params.postId }
         )
-        .then((response) => {
-            res.json(response);
-          })
-          .catch((err) => res.status(500).json(err));
+            .then((response) => {
+                res.json(response);
+            })
+            .catch((err) => res.status(500).json(err));
     }
 };
 

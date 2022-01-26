@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, InputGroup } from 'react-bootstrap'
-///import {addPost} from Methods/somwehere//
+import axios from 'axios'
 
 const PostForm = () => {
   const [ input, setInput] = useState({
@@ -21,7 +21,33 @@ const PostForm = () => {
 
   const handleSubmit = async event => {
     event.preventDefault()
+    alert('it is gone...')
     console.log(input)
+    
+    const newPost = {
+      postText: input.postText,
+      username: input.username
+    }
+    axios.post( "http://localhost:3001/api/posts/", newPost)
+
+    // const postURL = " http://localhost:3001/api/posts/"
+    // fetch(postURL,{
+    //   method: 'POST',
+    //   headers:{
+    //     'Accept':'application/json',
+    //     'Content-Type': 'application/json',
+
+    //   },
+    //   body: JSON.stringify({
+    //     postText: input.postText,
+    //     username: input.username
+    //   })
+      
+    // })
+    // .then(()=>{
+    //   alert('sent into the void')
+    //   console.log(input)
+    // })
     
   }
 
