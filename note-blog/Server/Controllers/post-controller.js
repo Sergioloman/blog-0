@@ -19,25 +19,13 @@ const postController = {
     createNewPost(req, res) {
         Post.create(req.body)
             .then(({ _id }) => {
-
                 return User.findOneAndUpdate(
                     { username: req.body.username },
                     { $push: { posts: _id } },
                     { new: true }
-                )
-
-                
+                )                
             })
-            // we are onto something here 
-            //.then( dbPostData => { req.body.save(
-
-            //     req.body.username = dbPostData.username,
-            //     req.body.postText = dbPostData.postText
-            // )
-            // })
             .then((response) => {
-
-
                 res.json(response + " hope you get there buddy");
             })
             .catch((err) => res.status(500).json(err));

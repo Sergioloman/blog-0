@@ -29,26 +29,6 @@ const PostForm = () => {
       username: input.username
     }
     axios.post( "http://localhost:3001/api/posts/", newPost)
-
-    // const postURL = " http://localhost:3001/api/posts/"
-    // fetch(postURL,{
-    //   method: 'POST',
-    //   headers:{
-    //     'Accept':'application/json',
-    //     'Content-Type': 'application/json',
-
-    //   },
-    //   body: JSON.stringify({
-    //     postText: input.postText,
-    //     username: input.username
-    //   })
-      
-    // })
-    // .then(()=>{
-    //   alert('sent into the void')
-    //   console.log(input)
-    // })
-    
   }
 
   return (
